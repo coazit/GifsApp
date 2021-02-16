@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GifsService {
+  private apiKey = 'BGVQdyPTzjXIm3IOmxEMVEoMPNOOCcEX';
   private _historial: string[] = [];
 
   get historial() {    
@@ -17,6 +18,7 @@ export class GifsService {
       this._historial  = this.historial.splice(0,10);
     }    
     console.log(this._historial);
+    
   }
 
 
