@@ -5,7 +5,12 @@
     </h3>
     <hr class="text-white">
     <div class="list-group list-reset">
-        <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
+        <a 
+        href="#" 
+        class="list-group-item list-group-item-action" 
+        *ngFor="let item of historial;">
+        {{ item }}
+        </a>       
     </div>
   </div>
   <!--end Sidebar-->
