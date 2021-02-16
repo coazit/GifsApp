@@ -6,12 +6,16 @@ import { Injectable } from '@angular/core';
 export class GifsService {
   private _historial: string[] = [];
 
-  get historial() {
+  get historial() {    
     return [...this._historial];
   }
 
   buscarGifs( query:string ) {
-    this._historial.unshift(query);
+    query = query.trim().toLocaleLowerCase();
+    if( !this.historial.includes(query)) {      
+      this._historial.unshift(query);
+      this._historial  = this.historial.splice(0,10);
+    }    
     console.log(this._historial);
   }
 
